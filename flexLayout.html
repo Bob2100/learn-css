@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .app {
+      text-align: center;
+      display: flex;
+      padding-top: 60px;
+    }
+
+    header {
+      background: aqua;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+    }
+
+    aside {
+      background: rgb(223, 148, 223);
+      transition: width 0.3s;
+      width: 200px;
+    }
+
+    main {
+      flex: 1;
+      background: rgb(209, 207, 207);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <header>
+      <button onclick="collapse()">菜单折叠</button>
+      这是头部
+    </header>
+    <aside>
+      <ul>
+        <li>菜单</li>
+        <li>菜单</li>
+        <li>菜单</li>
+      </ul>
+    </aside>
+    <main>
+      <p>内容区</p>
+      <table border style="width: 100%;">
+        <tr>
+          <td>ceshi</td>
+          <td>jaja</td>
+        </tr>
+        <tr>
+          <td>ceshi</td>
+          <td>jaja</td>
+        </tr>
+      </table>
+    </main>
+  </div>
+
+  <script>
+    let isCollapsed = false
+    const asideEl = document.querySelector('aside')
+    function collapse() {
+      isCollapsed = !isCollapsed
+      if (isCollapsed) {
+        asideEl.style.width = '200px'
+      } else {
+        asideEl.style.width = '500px'
+      }
+    }
+  </script>
+</body>
+
+</html>
